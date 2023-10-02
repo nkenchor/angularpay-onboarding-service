@@ -1,0 +1,30 @@
+server:
+  port: 20240
+
+spring:
+  application.name: onboarding-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: angularpay
+      username: service_account
+      password: service_account_password
+      authentication-database: angularpay
+
+angularpay:
+  otpUrl: http://localhost:20480
+  userconfigUrl: http://localhost:20210
+  identityUrl: http://localhost:20260
+  notificationUrl: http://localhost:20270
+  pageSize: 50
+  codecSizeInMB: 50
+  maxUpdateRetry: 10
+  onboardingTTLMinutes: 10
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000
+  bruteForceGuard:
+    maxLoginAttempts: 10
+    blockDurationInHours: 24
